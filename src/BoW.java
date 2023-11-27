@@ -67,5 +67,4 @@ public class BoW {
         }
     }
 //five, heard, will, come, birds, we, cats, and
-
 }
