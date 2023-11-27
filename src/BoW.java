@@ -8,11 +8,9 @@ public class BoW {
         Set<String> vocabulary = new HashSet<>();
 
         for (String document : documents) {
-            String[] words = document.toLowerCase().split("\\s+");
+            vocabulary.addAll(Arrays.asList(document.toLowerCase().split("\\s+")));
+            //String[] words = document.toLowerCase().split("\\s+");
 
-            for (String word : words) {
-                vocabulary.add(word);
-            }
         }
         return vocabulary;
     }
