@@ -10,15 +10,6 @@ public class TFIDF {
                 termFrequencies.put(term, 1);
             }
         }
-
-//        HashMap<String, Double> tfMap = new HashMap<>();
-//        double totalTerms = termFrequencies.values().stream().mapToDouble(Integer::doubleValue).sum();
-//        // formula to calculate tf
-//        termFrequencies.forEach((term, tf) -> {
-//            double tfValue = tf / totalTerms;
-//            tfMap.put(term, tfValue);
-//        });
-//        return tfMap;
     }
 
     public void calculateIDF(HashMap<String, Double> idfMap, HashMap<String, ArrayList<String>> documentTermFrequencies, int totalDocuments) {
@@ -37,46 +28,6 @@ public class TFIDF {
             tfidfMap.put(term, tfidf);
         }
     }
-
-//    public static HashMap<String, Double> calculateIDF(HashMap<String, HashMap<String, Integer>> documentTermFrequencies) {
-//        HashMap<String, Double> idfMap = new HashMap<>();//store calculated idf values
-//        int totalDocuments = documentTermFrequencies.size(); //total no of docs
-//        Set<String> allTerms = new HashSet<>();
-//
-//        for (Map<String, Integer> terms : documentTermFrequencies.values()) {
-//            allTerms.addAll(terms.keySet());
-//        }
-//        //calculate IDF
-//        for (String term : allTerms) {
-//            long documentCount = documentTermFrequencies.values().stream()
-//                    .filter(d -> d.containsKey(term))
-//                    .count();
-//            double idfValue = Math.log((double) totalDocuments / documentCount);
-//            idfMap.put(term, idfValue);
-//        }
-//        return idfMap;
-//    }
-
-
-//    public static HashMap<String, Double> calculateTFIDF(HashMap<String, Integer> termFrequencies,
-//                                                         HashMap<String, Double> idfMap) {
-//        HashMap<String, Double> tfidfMap = new HashMap<>();
-//
-//
-//        // Calculate TF
-//        HashMap<String, Double> tfMap = calculateTF(termFrequencies);
-//
-//
-//        // Calculate TF-IDF
-//        tfMap.forEach((term, tfValue) -> {
-//            double idfValue = idfMap.getOrDefault(term, 0.0);
-//            double tfidfValue = tfValue * idfValue;
-//            tfidfMap.put(term, tfidfValue);
-//        });
-//
-//
-//        return tfidfMap;
-//    }
     public static void main(String[] args) {
         TFIDF calculator = new TFIDF();
 
